@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].Todo
+(
+  Id INT PRIMARY KEY NOT NULL IDENTITY(1,1),
+  [Title] VARCHAR(255) NULL,
+  [State] INT,
+  [Detail] NTEXT
+)

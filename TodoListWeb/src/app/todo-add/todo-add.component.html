@@ -1,0 +1,25 @@
+<p>Add a new TODO !</p>
+ <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" formControlName="title"   maxlength="255" />
+        <div *ngIf="submitted && checks.title.errors" >
+            <div *ngIf="checks.title.errors.required">Title is required</div>
+        </div>
+    </div>
+    <div >
+        <label for="description">Description</label>
+        <input type="description" formControlName="description" class="form-control" />        
+    </div>
+    <div class="form-group">
+        <button [disabled]="saving" >
+            Create
+        </button>       
+        <div *ngIf="saving" >Saving</div>
+    </div>
+
+    <div *ngIf="erreur" >
+        <strong>{{erreur}}</strong>
+    </div>
+</form>
+<a [routerLink]="['/todo']">Back</a>

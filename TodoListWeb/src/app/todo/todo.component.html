@@ -1,0 +1,16 @@
+<p>Todo List !</p>
+<p><a [routerLink]="['/todoadd']" >Add a Todo</a></p>
+<div *ngIf="TodoList.length==0" >Empty List</div>
+<div *ngIf="TodoList.length>0" >
+    <table>
+       <tr>
+           <th>Title</th>
+           <th>Detail</th>           
+       </tr>
+        <tr *ngFor="let item of TodoList">
+            <td ><p [ngClass]="{'strike' : item.state>0}">{{item.title}}</p> </td>
+            <td><a [routerLink]="['/detail', item.id]" >Detail</a> </td>
+        </tr>
+        
+    </table>
+</div>

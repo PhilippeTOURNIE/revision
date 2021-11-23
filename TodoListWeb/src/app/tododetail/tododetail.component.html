@@ -1,0 +1,5 @@
+<p>todo detail !</p>
+<p>Title : {{model.title}}</p>
+<p>Description : {{model.detail}}</p>
+<p>State : <input type="checkbox" id="ckb" name="ckb"  [(ngModel)]="currentState" (ngModelChange)="save()" ></p>
+<a [routerLink]="['/todo']">Back</a>
